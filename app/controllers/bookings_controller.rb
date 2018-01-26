@@ -1,24 +1,24 @@
 class BookingsController < ApplicationController
   
-  before_action :set_user, :set_motel_id
-
+  before_action :set_bookings, only: [:index, :show]
+  include BookingsHelper
+  
   def index
-    @booking_objs = Booking.bookings_user_objects(@motel_id)
-    @bookings = @booking_objs.map(&:attributes)
+    # byebug
   end
 
   def show
-    # @booking = @bookings.get(:all, :from => "/motels/#{params[:motel_id]}/bookings.json")
   end
 
   private
 
-  def set_user
-    @user = current_user
+  def set_bookings
+    @motel_id = current_user.motel_id
+    @bookings_all = Booking.find(:all, :from => "/motels/#{current_user.motel_id}/bookings.json").map(&:attributes)
+    @bookings_room = @bookings_all.select {|id| id["room_id"] == params[:format].to_i }
+    @revenue_total = @bookings_all.map {|id| id["amount_centavos"] }.sum/100
+    @revenue_room = @bookings_room.map {|id| id["amount_centavos"] }.sum/100
+    @fee_percentage_average_room = @bookings_room.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings_room.size
+    @fee_percentage_average_total = @bookings_all.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings_all.size
   end
-
-  def set_motel_id
-    @motel_id = @user.motel_id
-  end
-
 end
