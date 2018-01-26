@@ -1,5 +1,4 @@
-<h1>Motels#index</h1>
-<p>Find me in app/views/motels/index.html.erb</p>
 <% @motels.each do |motel| %>
-<%= link_to motel_rooms_path(motel) %>
+  <%= link_to "#{motel.name} Rooms", user_motel_rooms_path(@user, @user.motel_id) %>
+  <%= link_to "#{motel.name} Bookings", user_motel_bookings_path(@user, @user.motel_id) %>
 <% end %>
