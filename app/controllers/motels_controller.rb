@@ -1,9 +1,19 @@
 class MotelsController < ApplicationController
+  
+  before_action :set_user
+  
   def index
-    @motels = Motels.all
+    # @motels = Motel.all
+    @motel = Motel.all.select { |motel| motel.id == @user.motel_id }
   end
   
   def show
-    @motel = @motels.select { |motel| motel.id == params[:id] }
   end
+
+  private
+
+  def set_user
+    @user = current_user
+  end
+
 end
