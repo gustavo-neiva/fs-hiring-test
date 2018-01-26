@@ -9,9 +9,4 @@ class Booking < ActiveResource::Base
     Booking.find(:all, :from => "/motels/#{user_motel_id}/bookings.json")
   end
 
-  def bookings_to_a
-    @bookings.map { |booking| booking.attributes }
-  end
-
-
 end
