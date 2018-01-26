@@ -4,7 +4,7 @@ class MotelsController < ApplicationController
   
   def index
     # @motels = Motel.all
-    @motel = Motel.all.select { |motel| motel.id == @user.motel_id }
+    @motels = Motel.all.select { |motel| motel.id == @user.motel_id }
   end
   
   def show

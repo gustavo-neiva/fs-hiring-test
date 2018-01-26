@@ -3,8 +3,8 @@ class BookingsController < ApplicationController
   before_action :set_user, :set_motel_id
 
   def index
-    @bookings = Booking.bookings_user_objects(@motel_id)
-    
+    @booking_objs = Booking.bookings_user_objects(@motel_id)
+    @bookings = @booking_objs.map(&:attributes)
   end
 
   def show
@@ -21,7 +21,4 @@ class BookingsController < ApplicationController
     @motel_id = @user.motel_id
   end
 
-  # def set_bookings_objects
-    
-  # end
 end
