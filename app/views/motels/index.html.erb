@@ -1,4 +1,8 @@
 <% @motels.each do |motel| %>
-  <%= link_to "#{motel.name} Rooms", user_motel_rooms_path(@user, @user.motel_id) %>
-  <%= link_to "#{motel.name} Bookings", user_motel_bookings_path(@user, @user.motel_id) %>
+  <%= link_to "#{motel.name} Rooms", user_motel_rooms_path(current_user, current_user.motel_id) %>
+  <%= link_to "#{motel.name} Bookings", user_motel_bookings_path(current_user, current_user.motel_id) %>
 <% end %>
+<%= number_to_currency_br(@revenue_total) %>
+<%= number_to_currency_br(@fee_total) %>
+<%= number_to_currency_br(@income_total) %>
+
