@@ -2,7 +2,7 @@
   <#%= booking %>
 <#% end %> -->
 <% @rooms.each do |room| %>
-  <%= link_to "#{room.name} bookings", booking_path(current_user, room) %>
+  <%= link_to "#{room.name} bookings", booking_path(room) %>
 <% end %>
 <%= number_to_currency_br(@revenue_total) %> revenue_total
 <%= number_to_currency_br(@fee_total) %> fee_total
