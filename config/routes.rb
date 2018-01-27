@@ -8,10 +8,7 @@ Rails.application.routes.draw do
       post 'sign-in' => 'devise/sessions#create', :as => :user_session
       delete 'sign-out' => 'devise/sessions#destroy', :as => :destroy_user_session
     end
-  resources :user do
-    resources :motels, only: [:index, :show] do
-      resources :rooms, only: [:index, :show]
-      resources :bookings, only: [:index]
-    end
-  end
+  
+    resources :bookings, only: [:index, :show]
+    
 end
