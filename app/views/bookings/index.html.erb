@@ -1,7 +1,15 @@
+<div class="dashboard">
+  <%= number_to_currency_br(@revenue_total) %> revenue_total
+  <%= number_to_currency_br(@fee_total) %> fee_total
+  <%= number_to_currency_br(@income_total) %> income_total
+  <%= @fee_pp_avg_total %>%
+</div>
+<div class="card">
 <% @rooms.each do |room| %>
-  <%= link_to "#{room.name} bookings", booking_path(room) %>
-<% end %>
-<%= number_to_currency_br(@revenue_total) %> revenue_total
-<%= number_to_currency_br(@fee_total) %> fee_total
-<%= number_to_currency_br(@income_total) %> income_total
-<%= @fee_pp_avg_total %>%
+    <div class="col-xs-12 col-sm-6 col-lg-6">
+      <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= room.picture%>);">  
+        <%= link_to "#{room.name} bookings", booking_path(room), class: "card-link" %>
+      </div>
+    </div>
+    <% end %>
+</div>
