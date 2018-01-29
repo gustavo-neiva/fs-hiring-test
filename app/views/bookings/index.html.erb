@@ -1,15 +1,20 @@
-<div class="dashboard">
-  <%= number_to_currency_br(@revenue_total) %> revenue_total
-  <%= number_to_currency_br(@fee_total) %> fee_total
-  <%= number_to_currency_br(@income_total) %> income_total
-  <%= @fee_pp_avg_total %>%
-</div>
-<div class="card">
-<% @rooms.each do |room| %>
-    <div class="col-xs-12 col-sm-6 col-lg-6">
-      <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= room.picture%>);">  
-        <%= link_to "#{room.name} bookings", booking_path(room), class: "card-link" %>
-      </div>
+<div class="container">
+  <h1><%= @motel.map { |el| el.name }[0] %></h1>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @motel.map { |el| el.logo }[0] %>);">
+      <div class="banner-item"> <small>Bookings</small><br><span><%= @bookings_total %></span></div>
+      <div class="banner-item"> <small>Income</small><br><span><%= number_to_currency_br(@income_total) %></span></div>
     </div>
-    <% end %>
+    <div class="card">
+      <% @rooms.each do |room| %>
+      <div class="col-xs-12 col-sm-6 col-lg-6">
+        <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= room.picture %>);">  
+          <div class="card-description"><%= "#{room.name} bookings" %></div>   
+          <a class="card-link" href="<%= booking_path(room) %>"></a>
+        </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="dashboard">
+      
+    </div>
 </div>

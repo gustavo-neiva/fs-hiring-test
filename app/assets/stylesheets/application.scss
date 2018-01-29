@@ -13,3 +13,19 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+    margin-top: -5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body{
+    font-size: 25px;
+  }
+}
+small {
+  font-size: 80%;
+}

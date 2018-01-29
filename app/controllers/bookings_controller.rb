@@ -6,7 +6,9 @@ class BookingsController < ApplicationController
     @revenue_total = @bookings.map {|id| id["amount_centavos"] }.sum/100
     @fee_total = @bookings.map { |i| i.values[2]/100 * i.values[3]/100 }.inject(:+)
     @income_total = @revenue_total - @fee_total
+    @bookings_total = @bookings.count
     @fee_pp_avg_total = @bookings.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings.size
+    console
   end
 
   def show
