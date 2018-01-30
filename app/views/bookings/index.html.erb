@@ -1,8 +1,10 @@
 <div class="container">
   <h1><%= @motel.map { |el| el.name }[0] %></h1>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @motel.map { |el| el.logo }[0] %>);">
-      <div class="banner-item"> <small>Bookings</small><br><span id="dash"><%= @bookings_total %></span></div>
-      <div class="banner-item"> <small>Income</small><br><span id="dash"><%= number_to_currency_br(@income_total) %></span></div>
+      <div class="banner-item"> <small>Bookings</small><br><span id="mark-green"><%= @bookings_total %></span></div>
+      <div class="banner-item"> <small>Revenue</small><br><span id="mark"><%= number_to_currency_br(@revenue_total) %></span></div>
+      <div class="banner-item"> <small>Fee</small><br><span id="mark-red"><%= number_to_currency_br(@fee_total) %></span></div>
+      <div class="banner-item"> <small>Income</small><br><span id="mark"><%= number_to_currency_br(@income_total) %></span></div>
     </div>
     <div class="card">
       <% @rooms.each do |room| %>
@@ -14,7 +16,14 @@
         </div>
         <% end %>
     </div>
-    <div class="dashboard">
-      
+    <div class="col-lg-12">
+      <%= pie_chart room_revenue(@bookings, @rooms_id, @rooms), library: {title: "Revenue per room"} %>
     </div>
-</div>
+    <%= javascript_tag do %>
+      const data = <%= raw @bookings_json %>;
+    <% end %>
+    <div class="col-lg-12">
+      <div id="bookings-table">
+      </div>
+    </div>
+  </div>

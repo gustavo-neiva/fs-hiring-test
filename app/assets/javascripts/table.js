@@ -1,4 +1,4 @@
-var container = document.getElementById('table'),
+var container = document.getElementById('bookings-table'),
 hot;
 
 var hot = new Handsontable(container, {
@@ -6,6 +6,12 @@ var hot = new Handsontable(container, {
   colHeaders: ["Booking ID", "Room ID", "Amount BRL", "Fee %", "Booking Period", "Created at", "Paid at", "Booking Code"],
   columnSorting: true,
   sortOrder: Boolean,
-  minSpareRows: 1,
   editor: false,
+  preventOverflow: 'horizontal',
+  stretchH: 'all',
+  columnSorting: true,
+  sortIndicator: true,
+  manualColumnResize: true
 });
+
+

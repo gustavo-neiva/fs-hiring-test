@@ -1,8 +1,33 @@
-<%= javascript_tag do %>
-  const data = <%= raw @bookings_json %>; 
-<% end %>
-<div class="row-fluid">
-  <table id="table" class="hot handsontable">
-  </table>
-  </div> 
-</div>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  @room[0]["picture"] %>);">
+    <div class="banner-item"> <h2><%= @room[0]["name"] %></h2></div>
+  </div>
+  <!-- <div class="col-xs-12 col-sm-6 col-lg-6"> -->
+      <div class="panel">
+        <div class="panel-body success">
+           Bookings
+        </div>
+        <div class="panel-footer"><h4><%= @bookings_room.count %></h4></div>
+      </div>
+      <div class="panel">
+        <div class="panel-body primary">
+           Revenue
+        </div>
+        <div class="panel-footer"><h4><%= number_to_currency_br(@revenue_room) %></h4></div>
+      </div>
+      <div class="panel">
+        <div class="panel-body danger">
+           Fees
+        </div>
+        <div class="panel-footer"><h4><%= number_to_currency_br(@fee_room) %></h4></div>
+      </div>
+      <div class="panel">
+        <div class="panel-body primary">
+           Income
+        </div>
+        <div class="panel-footer"><h4><%= number_to_currency_br(@income_room) %></h4></div>
+      </div>
+    <div class="col-lg-12">
+      <%= line_chart @total_rev_month, xtitle: "Date", ytitle: "Revenue" %>
+    </div>
+  </div>

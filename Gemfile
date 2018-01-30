@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'activeresource'
 gem "chartkick"
 gem "bootstrap-table-rails"
+gem "groupdate"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

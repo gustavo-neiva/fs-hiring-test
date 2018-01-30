@@ -1,3 +1,7 @@
+.container{
+  overflow: hidden;
+}
+
 .banner {
    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07),
    0 1px 0 0 rgba(0, 0, 0, 0.03);
@@ -26,7 +30,16 @@
   position: relative;
 }
 
-#dash {
+#mark{
+  color: white;
+  letter-spacing: -1px;
+  background: rgb(56, 59, 207);
+  /* fallback color */
+  background: rgba(56, 59, 207, 0.6);
+  padding: 0.5vh;
+}
+
+#mark-green {
   color: white;
   letter-spacing: -1px;
   background: rgb(39, 143, 117);
@@ -34,3 +47,34 @@
   background: rgba(39, 143, 117, 0.6);
   padding: 0.5vh;
 }
+
+#mark-red {
+  color: white;
+  letter-spacing: -1px;
+  background: rgb(230, 14, 25);
+  /* fallback color */
+  background: rgba(230, 14, 25, 0.6);
+  padding: 0.5vh;
+}
+
+#bookings-table {
+  font-size: 12px;
+}
+.panel{
+  text-aling: center;
+}
+.success {
+  background-color: rgb(106, 187, 106);
+}
+
+.primary {
+  background-color: rgb(46, 90, 160);
+}
+.danger {
+  background-color: rgb(156, 66, 66);
+}
+
+.container {
+  margin-bottom: 5vh;
+}
+
