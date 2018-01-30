@@ -3,6 +3,7 @@
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @motel.map { |el| el.logo }[0] %>);">
       <div class="banner-item"> <small>Bookings</small><br><span id="dash"><%= @bookings_total %></span></div>
       <div class="banner-item"> <small>Income</small><br><span id="dash"><%= number_to_currency_br(@income_total) %></span></div>
+      <div class="banner-item"> <small>Total fee</small><br><span id="dash-neg"><%= number_to_currency_br(@fee_total) %></span></div>
     </div>
     <div class="card">
       <% @rooms.each do |room| %>
