@@ -1,5 +1,3 @@
-require 'csv'
-require 'json'
 class BookingsController < ApplicationController
   before_action :set_bookings
 
@@ -8,7 +6,6 @@ class BookingsController < ApplicationController
     @fee_total = @bookings.map { |i| i.values[2]/100 * i.values[3]/100 }.inject(:+)
     @income_total = @revenue_total - @fee_total
     @bookings_total = @bookings.count
-    @fee_pp_avg_total = @bookings.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings.size
     @bookings_refactor = @bookings.each { |el| el["amount_centavos"] = el["amount_centavos"]/100 }.each { |el| el["paid_at"] = el["paid_at"].to_datetime.strftime("%b, %m %Y - %H:%M") }.each { |el| el["created_at"] = el["created_at"].to_datetime.strftime("%b, %m %Y - %H:%M") } 
     @bookings_json = @bookings_refactor.to_json
   end
@@ -19,10 +16,8 @@ class BookingsController < ApplicationController
     @revenue_room = @bookings_room.map {|id| id["amount_centavos"] }.sum/100
     @fee_room = @bookings_room.map { |i| i.values[2]/100 * i.values[3]/100 }.inject(:+)
     @income_room = @revenue_room - @fee_room
-    @fee_pp_avg_room = @bookings_room.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings_room.size
-    @sorted_by_month = (@bookings_room.map { |el| el.fetch("paid_at")}).zip((@bookings_room.map { |el| el.fetch("amount_centavos")})).group_by_month { |u| u[0] }
-    @total_rev_month = @sorted_by_month.map { |k,v| [k, (v.map(&:last).sum)/100]}
-    console
+    @sorted_by_month_room = (@bookings_room.map { |el| el.fetch("paid_at")}).zip((@bookings_room.map { |el| el.fetch("amount_centavos")})).group_by_month { |u| u[0] }
+    @total_rev_month_room = @sorted_by_month_room.map { |k,v| [k, (v.map(&:last).sum)/100]}
   end
   
   private

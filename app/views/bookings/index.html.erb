@@ -17,7 +17,6 @@
         <% end %>
     </div>
     <div class="col-lg-12">
-      <%#= column_chart data_graph(date_time(data_fetch(@bookings_room, "paid_at")), data_fetch(@bookings_room, "amount_centavos")) %>
       <%= pie_chart room_revenue(@bookings, @rooms_id, @rooms), library: {title: "Revenue per room"} %>
     </div>
     <%= javascript_tag do %>
