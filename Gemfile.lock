@@ -54,6 +54,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-table-rails (1.11.1.1)
     builder (3.2.3)
     byebug (9.1.0)
     chartkick (2.2.4)
@@ -75,8 +76,6 @@ GEM
       sass (>= 3.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    groupdate (3.2.0)
-      activesupport (>= 3)
     i18n (0.9.3)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -204,11 +203,11 @@ DEPENDENCIES
   activeresource
   autoprefixer-rails
   bootstrap-sass (~> 3.3.7)
+  bootstrap-table-rails
   chartkick
   devise
   figaro
-  font-awesome-sass
-  groupdate
+  font-awesome-sass (~> 4.3)
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)

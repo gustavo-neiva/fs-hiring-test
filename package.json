@@ -3,6 +3,8 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.2.1",
+    "bootstrap-table": "^1.11.2",
+    "handsontable": "^0.35.1",
     "jquery-ujs": "^1.2.2"
   },
   "devDependencies": {

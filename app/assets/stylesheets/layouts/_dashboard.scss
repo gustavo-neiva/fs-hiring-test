@@ -1,0 +1,36 @@
+.banner {
+   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07),
+   0 1px 0 0 rgba(0, 0, 0, 0.03);
+   transition: all 0.3s ease;
+   background-size: cover !important;
+   background-position: center;
+   height: 33vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center; 
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   margin-bottom: 2vh;
+   margin-top: 1vh;
+   text-align: center;
+   padding: 0px 5px;
+   color:#fff;
+} 
+
+.banner-item {
+  height: 33vh;
+  background-size: cover !important;
+  background-position: center;
+  position: relative;
+}
+
+#dash {
+  color: white;
+  letter-spacing: -1px;
+  background: rgb(39, 143, 117);
+  /* fallback color */
+  background: rgba(39, 143, 117, 0.6);
+  padding: 0.5vh;
+}

@@ -4,10 +4,11 @@
   background: #5A083D;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 5vh
 }
 
 /* Logo */
@@ -32,7 +33,6 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
 }
 
 /* Navbar link */
@@ -47,9 +47,11 @@
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
-  margin-top: 15px;
+  margin-top: 5px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  min-width: 0px;
+  margin: 5px -8px 0;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -74,4 +76,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.fa-bars {
+  color: #DB8C0A;
 }
