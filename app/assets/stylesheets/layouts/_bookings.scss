@@ -30,7 +30,7 @@
   position: relative;
 }
 
-#dash {
+#mark{
   color: white;
   letter-spacing: -1px;
   background: rgb(56, 59, 207);
@@ -39,7 +39,16 @@
   padding: 0.5vh;
 }
 
-#dash-neg {
+#mark-green {
+  color: white;
+  letter-spacing: -1px;
+  background: rgb(39, 143, 117);
+  /* fallback color */
+  background: rgba(39, 143, 117, 0.6);
+  padding: 0.5vh;
+}
+
+#mark-red {
   color: white;
   letter-spacing: -1px;
   background: rgb(230, 14, 25);
