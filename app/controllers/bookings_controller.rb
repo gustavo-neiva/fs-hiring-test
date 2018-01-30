@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @bookings_room = @bookings.select {|id| id["room_id"] == params[:id].to_i }
     @revenue_room = @bookings_room.map {|id| id["amount_centavos"] }.sum/100
     @fee_pp_avg_room = @bookings_room.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings_room.size
+    console
   end
 
   private

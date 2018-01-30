@@ -8,4 +8,7 @@ module ApplicationHelper
   def data_graph (array1, array2)
     Hash[array1.zip(array2)]
   end
+  def date_time(array)
+    array.map { |el| el.to_datetime}.sort.map { |date| date.strftime("%d de %b") }
+  end
 end
