@@ -1,26 +1,8 @@
-<%#= number_to_currency_br(@revenue_room) %> revenue_room
-<%#=  @bookings_room.map do |key| %>
-<%#    "#{key["amount_centavos"]}: #{key["booking_period"]}  #{key["created_at"]} #{key["paid_at"]} #{key["booking_code"]} "%>
-<%# end %>
-<%#= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<%#= column_chart data_graph(date_time(data_fetch(@bookings_room, "paid_at")), data_fetch(@bookings_room, "amount_centavos")), stacked: true %>
 <%= javascript_tag do %>
   const data = <%= raw @bookings_json %>; 
 <% end %>
 <div class="row-fluid">
-  <div class="col-md-12"><table id="table">
-      <!-- <thead>
-        <tr>
-          <th data-field="id">Booking ID</th>
-          <th data-field="room-id">Room ID</th>
-          <th data-field="amount">Amount BRL</th>
-          <th data-field="fee">Fee %</th>
-          <th data-field="booking-period">Booking Period</th>
-          <th data-field="created-at">Created at</th>
-          <th data-field="paid-at">Paid at</th>
-          <th data-field="booking-code">Booking Code</th>
-        </tr>
-      </thead> -->
-    </table>
+  <table id="table" class="hot handsontable">
+  </table>
   </div> 
 </div>

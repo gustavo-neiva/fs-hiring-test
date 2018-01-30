@@ -9,6 +9,6 @@ module ApplicationHelper
     Hash[array1.zip(array2)]
   end
   def date_time(array)
-    array.map { |el| el.to_datetime}.sort.map { |date| date.strftime("%d de %b") }
+    array.map { |el| el.to_datetime}.sort.map { |date| date.strftime("%b, %m %Y - %H:%M") }
   end
 end
