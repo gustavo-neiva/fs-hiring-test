@@ -9,15 +9,14 @@ class BookingsController < ApplicationController
     @income_total = @revenue_total - @fee_total
     @bookings_total = @bookings.count
     @fee_pp_avg_total = @bookings.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings.size
+    @bookings_refactor = @bookings.each { |el| el["amount_centavos"] = el["amount_centavos"]/100 }.each { |el| el["paid_at"] = el["paid_at"].to_datetime.strftime("%b, %m %Y - %H:%M") }.each { |el| el["created_at"] = el["created_at"].to_datetime.strftime("%b, %m %Y - %H:%M") } 
+    @bookings_json = @bookings_refactor.to_json
   end
 
   def show
     @bookings_room = @bookings.select {|id| id["room_id"] == params[:id].to_i }
     @revenue_room = @bookings_room.map {|id| id["amount_centavos"] }.sum/100
     @fee_pp_avg_room = @bookings_room.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings_room.size
-    @bookings_refactor = @bookings_room.each { |el| el["amount_centavos"] = el["amount_centavos"]/100 }.each { |el| el["paid_at"] = el["paid_at"].to_datetime.strftime("%b, %m %Y - %H:%M") }.each { |el| el["created_at"] = el["created_at"].to_datetime.strftime("%b, %m %Y - %H:%M") } 
-    @bookings_json = @bookings_refactor.to_json
-    console
   end
   
   private

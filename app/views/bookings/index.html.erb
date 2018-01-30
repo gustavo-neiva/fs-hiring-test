@@ -15,6 +15,11 @@
         <% end %>
     </div>
     <div class="dashboard">
-      
     </div>
-</div>
+    <%= javascript_tag do %>
+      const data =
+      <%= raw @bookings_json %>;
+    <% end %>
+      <div id="bookings-table">
+      </div>
+  </div>
