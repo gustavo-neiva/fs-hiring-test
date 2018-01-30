@@ -11,4 +11,15 @@ module ApplicationHelper
   def date_time(array)
     array.map { |el| el.to_datetime}.sort.map { |date| date.strftime("%b, %m %Y - %H:%M") }
   end
+  def room_revenue(bookings, rooms, rooms_name)
+    index = 0
+    names = []
+    rooms_name.each { |room| names << room.name }
+    result = []
+    (rooms.length).times do
+      result << bookings.group_by { |i| i["room_id"] }[rooms[index]].map { |el| el["amount_centavos"] }.sum 
+      index += 1
+    end
+    Hash[names.zip result]
+  end
 end

@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @fee_pp_avg_total = @bookings.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings.size
     @bookings_refactor = @bookings.each { |el| el["amount_centavos"] = el["amount_centavos"]/100 }.each { |el| el["paid_at"] = el["paid_at"].to_datetime.strftime("%b, %m %Y - %H:%M") }.each { |el| el["created_at"] = el["created_at"].to_datetime.strftime("%b, %m %Y - %H:%M") } 
     @bookings_json = @bookings_refactor.to_json
+    @rooms_id = @rooms.map(&:attributes).map { |el| el[:id]}
   end
 
   def show
@@ -28,4 +29,5 @@ class BookingsController < ApplicationController
     @motel = Motel.all.select { |motel| motel.id == current_user.motel_id }
     @rooms = Room.where(motel_id: @motel_id)
   end
+
 end
