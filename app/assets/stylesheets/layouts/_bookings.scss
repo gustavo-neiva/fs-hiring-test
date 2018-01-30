@@ -8,11 +8,7 @@
    transition: all 0.3s ease;
    background-size: cover !important;
    background-position: center;
-   height: 33vh;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center; 
+   height: 40vh;
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
@@ -23,20 +19,12 @@
    color:#fff;
 } 
 
-.banner-item {
-  height: 33vh;
-  background-size: cover !important;
-  background-position: center;
-  position: relative;
-}
-
 #mark{
   color: white;
   letter-spacing: -1px;
   background: rgb(56, 59, 207);
   /* fallback color */
   background: rgba(56, 59, 207, 0.6);
-  padding: 0.5vh;
 }
 
 #mark-green {
@@ -45,7 +33,6 @@
   background: rgb(39, 143, 117);
   /* fallback color */
   background: rgba(39, 143, 117, 0.6);
-  padding: 0.5vh;
 }
 
 #mark-red {
@@ -54,27 +41,50 @@
   background: rgb(230, 14, 25);
   /* fallback color */
   background: rgba(230, 14, 25, 0.6);
-  padding: 0.5vh;
 }
 
 #bookings-table {
   font-size: 12px;
-}
-.panel{
-  text-aling: center;
-}
-.success {
-  background-color: rgb(106, 187, 106);
-}
-
-.primary {
-  background-color: rgb(46, 90, 160);
-}
-.danger {
-  background-color: rgb(156, 66, 66);
 }
 
 .container {
   margin-bottom: 5vh;
 }
 
+.project {
+  min-height: 15vh;
+  height: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.project-radius {
+  border-radius: 7px;
+}
+
+.project-danger {
+  border-color: #d9534f;
+}
+
+.project-success {
+  border-color: #5cb85c;
+}
+
+.project-primary {
+  border-color: #428bca;
+}
+
+.project-content {
+  padding: 0 20px 10px;
+  align-content: center;
+}
+
+.lead {
+  align-content: center;
+}

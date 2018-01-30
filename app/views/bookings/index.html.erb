@@ -1,29 +1,72 @@
 <div class="container">
   <h1><%= @motel.map { |el| el.name }[0] %></h1>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @motel.map { |el| el.logo }[0] %>);">
-      <div class="banner-item"> <small>Bookings</small><br><span id="mark-green"><%= @bookings_total %></span></div>
-      <div class="banner-item"> <small>Revenue</small><br><span id="mark"><%= number_to_currency_br(@revenue_total) %></span></div>
-      <div class="banner-item"> <small>Fee</small><br><span id="mark-red"><%= number_to_currency_br(@fee_total) %></span></div>
-      <div class="banner-item"> <small>Income</small><br><span id="mark"><%= number_to_currency_br(@income_total) %></span></div>
     </div>
-    <div class="card">
+        <div class="col-xs-12 col-sm-6">
+          <div class="project project-radius project-success" id="mark-green">
+            <div class="project-content">
+              <h3 class="lead">
+                 Bookings
+              </h3>
+              <p>
+                <%= @bookings_total %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="project project-radius project-primary" id="mark">
+            <div class="project-content">
+              <h3 class="lead">
+                Revenue
+              </h3>
+              <p>
+                  <%= number_to_currency_br(@revenue_total) %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="project project-radius project-danger" id="mark-red">
+            <div class="project-content">
+              <h3 class="lead">
+                Paid Fees
+              </h3>
+              <p>
+                <%= number_to_currency_br(@fee_total) %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="project project-radius project-primary" id="mark">
+            <div class="project-content">
+              <h3 class="lead">
+                Total Income
+              </h3>
+              <p>
+                <%= number_to_currency_br(@income_total) %>
+              </p>
+            </div>
+          </div>
+        </div>
       <% @rooms.each do |room| %>
-      <div class="col-xs-12 col-sm-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-lg-4">
         <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= room.picture %>);">  
           <div class="card-description"><%= "#{room.name} bookings" %></div>   
           <a class="card-link" href="<%= booking_path(room) %>"></a>
         </div>
         </div>
         <% end %>
-    </div>
-    <div class="col-lg-12">
-      <%= pie_chart room_revenue(@bookings, @rooms_id, @rooms), library: {title: "Revenue per room"} %>
-    </div>
-    <%= javascript_tag do %>
-      const data = <%= raw @bookings_json %>;
-    <% end %>
-    <div class="col-lg-12">
-      <div id="bookings-table">
+        <div class="col-xs-12 col-lg-12">
+          <%= pie_chart room_revenue(@bookings, @rooms_id, @rooms), library: {title: "Revenue per room"} %>
+        </div>
+        <%= javascript_tag do %>
+        const data = <%= raw @bookings_json %>;
+        <% end %>
+        <div class="col-lg-12">
+          <div id="bookings-table">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
