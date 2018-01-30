@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  
   before_action :set_bookings, only: [:index, :show]
 
   def index
@@ -8,7 +7,6 @@ class BookingsController < ApplicationController
     @income_total = @revenue_total - @fee_total
     @bookings_total = @bookings.count
     @fee_pp_avg_total = @bookings.map {|id| id["fee_percentage"] }.inject{ |sum, el| sum + el }.to_f / @bookings.size
-    console
   end
 
   def show
@@ -26,6 +24,7 @@ class BookingsController < ApplicationController
     @bookings = @bookings_obj.map(&:attributes)
     @motel = Motel.all.select { |motel| motel.id == current_user.motel_id }
     @rooms = Room.where(motel_id: @motel_id)
+    @bookings_json = @bookings_obj.to_json
   end
   
 end

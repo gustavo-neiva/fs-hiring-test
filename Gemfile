@@ -12,14 +12,14 @@ gem 'redis'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass',  '~> 4.3'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'activeresource'
 gem "chartkick"
-gem "groupdate"
+gem "bootstrap-table-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
