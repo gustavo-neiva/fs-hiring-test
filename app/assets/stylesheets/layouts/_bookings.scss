@@ -1,46 +1,5 @@
-.container{
+.container {
   overflow: hidden;
-}
-
-.banner {
-   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07),
-   0 1px 0 0 rgba(0, 0, 0, 0.03);
-   transition: all 0.3s ease;
-   background-size: cover !important;
-   background-position: center;
-   height: 40vh;
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
-   margin-bottom: 2vh;
-   margin-top: 1vh;
-   text-align: center;
-   padding: 0px 5px;
-   color:#fff;
-} 
-
-#mark{
-  color: white;
-  letter-spacing: -1px;
-  background: rgb(56, 59, 207);
-  /* fallback color */
-  background: rgba(56, 59, 207, 0.6);
-}
-
-#mark-green {
-  color: white;
-  letter-spacing: -1px;
-  background: rgb(39, 143, 117);
-  /* fallback color */
-  background: rgba(39, 143, 117, 0.6);
-}
-
-#mark-red {
-  color: white;
-  letter-spacing: -1px;
-  background: rgb(230, 14, 25);
-  /* fallback color */
-  background: rgba(230, 14, 25, 0.6);
 }
 
 #bookings-table {
@@ -49,40 +8,6 @@
 
 .container {
   margin-bottom: 5vh;
-}
-
-.project {
-  min-height: 15vh;
-  height: auto;
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  margin: 10px 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.project-radius {
-  border-radius: 7px;
-}
-
-.project-danger {
-  border-color: #d9534f;
-}
-
-.project-success {
-  border-color: #5cb85c;
-}
-
-.project-primary {
-  border-color: #428bca;
-}
-
-.project-content {
-  padding: 0 20px 10px;
-  align-content: center;
 }
 
 .lead {

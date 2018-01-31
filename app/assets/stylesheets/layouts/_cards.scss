@@ -3,6 +3,7 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   background-size: cover !important;
   background-position: center;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
   color: white;
   position: relative;
   margin-bottom: 10px;
@@ -40,4 +41,72 @@
 
 .card-link:hover {
   opacity: 0.1;
+}
+
+.banner {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  background-size: cover !important;
+  background-position: center;
+  height: 40vh;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+  text-align: center;
+  padding: 0px 5px;
+  color: #fff;
+}
+
+#mark {
+  color: white;
+  letter-spacing: -1px;
+  background: rgba(56, 59, 207, 0.6);
+}
+
+#mark-green {
+  color: white;
+  letter-spacing: -1px;
+  background: rgba(39, 143, 117, 0.6);
+}
+
+#mark-red {
+  color: white;
+  letter-spacing: -1px;
+  background: rgba(230, 14, 25, 0.6);
+}
+
+.project {
+  min-height: 15vh;
+  height: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.project-radius {
+  border-radius: 7px;
+}
+
+.project-danger {
+  border-color: rgba(230, 14, 25, 0.05);
+}
+
+.project-success {
+  border-color: rgba(39, 143, 117, 0.05);
+}
+
+.project-primary {
+  border-color: rgba(56, 59, 207, 0.05);
+}
+
+.project-content {
+  padding: 0 20px 10px;
+  align-content: center;
 }
