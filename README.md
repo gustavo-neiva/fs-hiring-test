@@ -17,9 +17,9 @@ The client app only has a user model.
 
 The main view of the app is the Motel dashboard. It contains the basic information about the motel that were made through the platform, like revenue, income, fees and number of bookings.
 
-I added a spreadsheet with every booking that was made with each Motel, so the user can easily access and copy the data and paste it in Excel or other spreadsheets programs.
+I added a spreadsheet with every booking that was made with each Motel, so the user can easily access and copy the data and paste it in Excel or other spreadsheets programs. I used the open source version pf [Handson Table](https://handsontable.com/), a JavaScript spreadsheet library.
 
-There are graphs as well, one in the motel dashboard and another in each room dashboard, implementing the beggining of business analysis features.
+There are graphs as well, one in the motel dashboard and another in each room dashboard, implementing the beggining of business analysis features. I used [Chartkick gem](http://chartkick.com/) to create the graphs.
 
 ## Users
 
