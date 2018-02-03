@@ -1,2 +1,60 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="container">
+  <div class="banner-item">
+    <h2>
+      <%= @room[0]["name"] %>
+    </h2>
+  </div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  @room[0]["picture"] %>);">
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="project project-radius project-success" id="mark-green">
+      <div class="project-content">
+        <p class="lead">
+          Room Bookings
+        </p>
+        <h2>
+          <%= @bookings_room.count %>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="project project-radius project-primary" id="mark">
+      <div class="project-content">
+        <p class="lead">
+          Room Revenue
+        </p>
+        <h2>
+          <%= number_to_currency_br(@revenue_room) %>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="project project-radius project-danger" id="mark-red">
+      <div class="project-content">
+        <p class="lead">
+          Room Fees
+        </p>
+        <h2>
+          <%= number_to_currency_br(@fee_room) %>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="project project-radius project-primary" id="mark">
+      <div class="project-content">
+        <p class="lead">
+          Room Income
+        </p>
+        <h2>
+          <%= number_to_currency_br(@income_room) %>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-lg-12">
+    <%= line_chart @total_rev_month_room, xtitle: "Date", ytitle: "Revenue" %>
+  </div>
+</div>

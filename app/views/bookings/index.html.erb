@@ -8,7 +8,7 @@
           <div class="card-description">
             <%= "#{room.name} bookings" %>
           </div>
-          <a class="card-link" href="<%= booking_path(room) %>"></a>
+          <a class="card-link" href="<%= motel_room_path(@motel_id, room.id) %>"></a>
         </div>
       </div>
       <% end %>
